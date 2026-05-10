@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "character.schema.json",
+  "title": "Character",
+  "description": "キャラクターデータモデル v0.1 (Sprint 1-1 スコープ)",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "キャラクター識別子"
+    },
+    "名前": {
+      "type": "string",
+      "description": "キャラクター名（自動生成）"
+    },
+    "性別": {
+      "type": "string",
+      "enum": ["男", "女"],
+      "description": "性別"
+    },
+    "年齢": {
+      "type": "integer",
+      "minimum": 15,
+      "description": "年齢。経過で加算され、引退・死亡のトリガーになる"
+    },
+    "職業": {
+      "type": "string",
+      "enum": ["戦士", "盗賊", "魔術師", "商人"],
+      "description": "職業"
+    },
+    "体力": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "戦闘系クエストの成功率に影響"
+    },
+    "技量": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "精密作業・命中系クエストに影響"
+    },
+    "知力": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "魔法・交渉・謎解き系クエストに影響"
+    },
+    "敏捷": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "回避・逃走・運搬系クエストに影響"
+    },
+    "魅力": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "description": "護衛・外交・結婚に影響"
+    },
+    "名声": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "クエスト受注の幅・称号・結婚に影響"
+    },
+    "善悪値": {
+      "type": "integer",
+      "minimum": -100,
+      "maximum": 100,
+      "description": "受けられるクエストの傾向が変わる。正が善、負が悪"
+    },
+    "資産": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "所持金。装備・訓練・結婚に必要"
+    },
+    "現在の状態": {
+      "type": "string",
+      "enum": ["クエスト中", "休息中", "引退", "死亡"],
+      "description": "キャラクターの現在の状態"
+    }
+  },
+  "required": [
+    "id",
+    "名前",
+    "性別",
+    "年齢",
+    "職業",
+    "体力",
+    "技量",
+    "知力",
+    "敏捷",
+    "魅力",
+    "名声",
+    "善悪値",
+    "資産",
+    "現在の状態"
+  ],
+  "additionalProperties": false
+}

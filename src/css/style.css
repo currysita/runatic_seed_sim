@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* ヘッダー */
+.app-header {
+  padding: 16px 24px;
+  background: #16213e;
+  border-bottom: 1px solid #0f3460;
+}
+
+.app-header h1 {
+  font-size: 1.4rem;
+  letter-spacing: 0.1em;
+  color: #a8d8ea;
+}
+
+/* キャラクター一覧 */
+#character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px;
+}
+
+/* キャラクターカード */
+.character-card {
+  background: #16213e;
+  border: 1px solid #0f3460;
+  border-radius: 8px;
+  padding: 16px;
+  width: 280px;
+}
+
+.character-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #0f3460;
+}
+
+.character-card__name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #a8d8ea;
+}
+
+.character-card__meta {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ステータスバッジ */
+.status-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.status-badge--active   { background: #1b4332; color: #52b788; }
+.status-badge--rest     { background: #1c3a5e; color: #74b3ce; }
+.status-badge--retired  { background: #3d3d3d; color: #aaa; }
+.status-badge--dead     { background: #4a1a1a; color: #e07070; }
+
+/* パラメータセクション */
+.param-section {
+  margin-bottom: 10px;
+}
+
+.param-section__title {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+/* 能力値バー */
+.param-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.param-bar__label {
+  font-size: 0.8rem;
+  width: 32px;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.param-bar__track {
+  flex: 1;
+  height: 6px;
+  background: #0f3460;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.param-bar__fill {
+  height: 100%;
+  background: #a8d8ea;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.param-bar__value {
+  font-size: 0.8rem;
+  width: 28px;
+  text-align: right;
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+/* 社会的パラメータ */
+.social-params {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+}
+
+.social-param {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.social-param__label { color: #888; }
+.social-param__value { color: #e0e0e0; }
+
+.social-param__value--positive { color: #52b788; }
+.social-param__value--negative { color: #e07070; }

@@ -1,0 +1,12 @@
+# 開発日誌（個人メモ）
+docs/開発日誌/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# エディタ
+.vscode/
+*.suo
+*.user
+/.claude/settings.local.json
